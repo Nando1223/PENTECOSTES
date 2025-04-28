@@ -14,7 +14,7 @@
 <body>
 
     <div class="form-container">
-        <h2>Registro de Asistentes</h2>
+        <h2>Registro de Asistencia</h2>
 
         <form id="formulario_asistente">
 
