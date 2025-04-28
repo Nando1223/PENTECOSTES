@@ -3,8 +3,6 @@ if (!isset($_GET['id'])) {
 
     die('ID de asistente no proporcionado.');
 }
-
-// 🔥 DECODIFICAR el ID recibido
 $id = base64_decode($_GET['id']);
 ?>
 
