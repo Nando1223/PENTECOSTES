@@ -1,5 +1,6 @@
 
 
+
 function onScanSuccess(decodedText, decodedResult) {
 
     console.log(`Código escaneado: ${decodedText}`);
