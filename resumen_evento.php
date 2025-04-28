@@ -10,7 +10,6 @@ require_once 'conexion.php';
     <title>Resumen de Asistentes</title>
     <link rel="icon" href="icono.ico" type="image/x-icon">
 
-
     <style>
         .logo-fijo {
             position: fixed;
@@ -25,7 +24,8 @@ require_once 'conexion.php';
 
         body {
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #0a0f2c, #011442);
+            /* 🔥 Fondo degradado azul */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -35,20 +35,21 @@ require_once 'conexion.php';
             padding: 20px;
         }
 
-
         h1 {
             margin-bottom: 40px;
-            color: #333;
-            background: rgba(255, 255, 255, 0.8);
+            color: #fff;
+            /* 🔥 Texto blanco */
+            background: rgba(0, 0, 0, 0.4);
+            /* 🔥 Fondo oscuro transparente */
             padding: 10px 20px;
             border-radius: 10px;
         }
 
         .contador {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0px 0px 10px #aaa;
+            box-shadow: 0px 0px 10px #000;
             text-align: center;
             margin: 20px;
             width: 300px;
@@ -57,7 +58,7 @@ require_once 'conexion.php';
         .contador h2 {
             margin: 0;
             font-size: 24px;
-            color: #555;
+            color: #333;
         }
 
         .contador p {
@@ -78,16 +79,25 @@ require_once 'conexion.php';
         }
 
         .boton-descarga a {
-            background: #007bff;
-            color: white;
+            background: #ffffff;
+            /* 🔥 Botón blanco */
+            color: #0a0f2c;
+            /* 🔥 Texto azul */
             padding: 15px 30px;
             border-radius: 10px;
             text-decoration: none;
             font-size: 18px;
+            font-weight: bold;
+            border: 2px solid #0a0f2c;
+            /* 🔥 Borde azul */
+            transition: all 0.4s ease;
         }
 
         .boton-descarga a:hover {
-            background: #0056b3;
+            background: #0a0f2c;
+            /* 🔥 Botón azul al pasar mouse */
+            color: white;
+            border: 2px solid white;
         }
     </style>
 
