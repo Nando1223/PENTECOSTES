@@ -13,7 +13,7 @@
 <body>
     <div class="form-container">
 
-        <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -90px;"> <!-- 🔥 Logo arriba -->
+        <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -120px;"> <!-- 🔥 Logo arriba -->
 
         <h2>Registro de Asistencia</h2>
 
