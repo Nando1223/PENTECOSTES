@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Escanear Código QR</title>
+    <link rel="icon" href="icono.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/html5-qrcode"></script> <!-- Librería para leer QR -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
