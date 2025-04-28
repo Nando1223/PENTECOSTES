@@ -90,18 +90,29 @@ $id = base64_decode($_GET['id']);
 <body>
 
     <div class="qr-container">
-        <h2>Entrada Digital del Asistente</h2>
+        <h2>Esta es tu entrada Digital</h2>
+
         <canvas id="codigoQR"></canvas>
-        <p style="margin-top: 15px;">ID de Asistente:</p>
+
+        <p style="margin-top: 15px;"># Entrada:</p>
         <p style="word-break: break-all;"><strong><?php echo htmlspecialchars($id); ?></strong></p>
 
-        <div class="buttons">
+        <!-- 🔥 Nueva Nota Importante -->
+        <div
+            style="margin-top: 20px; background: #fff3cd; color: #856404; padding: 15px; border-radius: 10px; border: 1px solid #ffeeba; font-size: 16px;">
+            ⚠️ <strong>Nota Importante:</strong><br>
+            Por favor, guarda esta imagen o toma una captura de pantalla.<br>
+            Este código QR será requerido para ingresar al evento. 📱🎟️
+        </div>
+
+        <div class="buttons" style="margin-top: 20px;">
             <button onclick="descargarQR()">Descargar QR</button>
             <button onclick="imprimirQR()">Imprimir QR</button>
         </div>
 
         <a href="formulario.php">Registrar otro asistente</a>
     </div>
+
 
     <script>
         // Generar el QR usando QRious
