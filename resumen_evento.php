@@ -1,18 +1,5 @@
 <?php
-require_once 'conexion.php'; // conexión limpia
-
-try {
-    $stmtTotal = $conn->prepare("SELECT COUNT(*) AS total_registrados FROM PENTECOSTES_ASISTENTES");
-    $stmtTotal->execute();
-    $totalRegistrados = $stmtTotal->fetch(PDO::FETCH_ASSOC)['total_registrados'];
-
-    $stmtAsistidos = $conn->prepare("SELECT COUNT(*) AS total_asistidos FROM PENTECOSTES_ASISTENTES WHERE Estado = 1");
-    $stmtAsistidos->execute();
-    $totalAsistidos = $stmtAsistidos->fetch(PDO::FETCH_ASSOC)['total_asistidos'];
-
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
+require_once 'conexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -90,22 +77,43 @@ try {
 
 <body>
 
+
     <h1>Resumen del Evento</h1>
 
     <div class="contadores">
         <div class="contador">
             <h2>Total Registrados</h2>
-            <p><?php echo $totalRegistrados; ?></p>
+            <p id="registrados">0</p> <!-- 🔥 ID para actualizar -->
         </div>
         <div class="contador">
             <h2>Total Asistidos</h2>
-            <p><?php echo $totalAsistidos; ?></p>
+            <p id="asistidos">0</p> <!-- 🔥 ID para actualizar -->
         </div>
     </div>
 
     <div class="boton-descarga">
         <a href="exportar_excel.php" target="_blank">📥 Descargar Excel</a>
     </div>
+
+    <script>
+        function actualizarContadores() {
+            fetch('resumen_datos.php') // Llamamos a un archivo PHP pequeño
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('registrados').innerText = data.total_registrados;
+                    document.getElementById('asistidos').innerText = data.total_asistidos;
+                })
+                .catch(error => {
+                    console.error('Error al actualizar:', error);
+                });
+        }
+
+        // Actualizar cada 5 segundos
+        setInterval(actualizarContadores, 5000);
+
+        // Llamar una vez cuando carga la página
+        actualizarContadores();
+    </script>
 
 </body>
 
