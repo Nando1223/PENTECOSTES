@@ -1,5 +1,6 @@
 <?php
 if (!isset($_GET['id'])) {
+
     die('ID de asistente no proporcionado.');
 }
 

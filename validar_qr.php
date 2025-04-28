@@ -1,8 +1,5 @@
 <?php
-$serverName = "DESKTOP-2ARJ21M\\SQLFERNANDO";
-$database = "FERNANDOBD";
-$username = "fernando"; 
-$password = "Fernando2304"; 
+require_once 'conexion.php';
 
 header('Content-Type: application/json');
 

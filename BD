@@ -1,11 +1,10 @@
 CREATE TABLE PENTECOSTES_ASISTENTES (
-    ID UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY, -- ID único generado automáticamente
-    Cedula VARCHAR(20) NOT NULL,                     -- Cédula
-    Nombres VARCHAR(150) NOT NULL,                    -- Nombres completos
-    Direccion VARCHAR(250) NULL,                      -- Dirección (puede ser opcional)
-    Celular VARCHAR(20) NULL,                         -- Número de celular (puede ser opcional)
+    ID UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY, 
+    Nombres VARCHAR(150) NOT NULL,                    
+    Direccion VARCHAR(250) NULL,                      
+    Celular VARCHAR(20) NULL,                       
     Estado BIT DEFAULT 0,
     Creado_date datetime,
     Congregacion varchar(200),
-    Cargo varchar(100)                           -- Estado (activo/inactivo), por defecto 0
+    Cargo varchar(100)                        
 );
