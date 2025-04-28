@@ -11,8 +11,9 @@
 </head>
 
 <body>
-
     <div class="form-container">
+
+        <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -90px;"> <!-- 🔥 Logo arriba -->
 
         <h2>Registro de Asistencia</h2>
 
@@ -52,10 +53,8 @@
             <button type="submit">Registrarme</button>
         </form>
 
-        <!-- <div class="link">
-            <a href="listar_asistentes.php">Ver Asistentes Registrados</a>
-        </div> -->
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="formulario.js"></script>

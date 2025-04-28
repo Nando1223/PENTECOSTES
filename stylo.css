@@ -1,31 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    background: linear-gradient(135deg, #0a0f2c, #011442);
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: flex-start; /* 🔥 Cambiado: que el contenido esté arriba */
+    padding-top: 50px; /* 🔥 Espacio arriba */
+    padding-bottom: 50px;
     min-height: 100vh;
     margin: 0;
 }
 
 .form-container {
-    background: white;
-    padding: 30px 20px; /* 🔥 Ajuste de padding horizontal */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px 20px;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px 0px #aaa;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     width: 100%;
-    max-width: 400px; /* 🔥 Un poquito más pequeño para móviles */
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo-formulario {
+    width: 200px; /* 🔥 Tamaño moderado */
+    margin-bottom: -80px; /* 🔥 Espacio justo entre logo y título */
 }
 
 h2 {
     text-align: center;
     color: #333;
+    margin-top: 10px; /* 🔥 Un pequeño margen para que se vea bien */
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .form-group {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 label {
@@ -41,7 +51,7 @@ input[type="number"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* 🔥 Para que padding no deforme ancho */
+    box-sizing: border-box;
 }
 
 .cargos {
@@ -58,39 +68,25 @@ input[type="number"] {
 button {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%); /* 🔥 Degradado azul */
+    background: linear-gradient(90deg, #0a0f2c, #011442);
     color: white;
     border: none;
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
     transition: background 0.4s ease;
 }
 
 button:hover {
-    background: linear-gradient(90deg, #0056b3 0%, #0099cc 100%);
+    background: linear-gradient(90deg, #011442, #0a0f2c);
 }
 
-.link {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.link a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.link a:hover {
-    text-decoration: underline;
-}
-
-/* Responsivo */
+/* RESPONSIVO */
 @media (max-width: 600px) {
     .form-container {
-        padding: 20px 15px; /* 🔥 Padding más pequeño en móviles */
-        max-width: 90%; /* 🔥 Casi todo el ancho en móviles */
+        padding: 20px 15px;
+        max-width: 90%;
     }
 }
