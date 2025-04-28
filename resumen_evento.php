@@ -9,7 +9,20 @@ require_once 'conexion.php';
     <meta charset="UTF-8">
     <title>Resumen de Asistentes</title>
     <link rel="icon" href="icono.ico" type="image/x-icon">
+
+
     <style>
+        .logo-fijo {
+            position: fixed;
+            top: -250px;
+            left: -100px;
+            width: 100%;
+            max-width: 580px;
+            /* 🔥 Controlas el tamaño máximo */
+            opacity: 0.7;
+            z-index: 999;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #f5f5f5;
@@ -22,9 +35,13 @@ require_once 'conexion.php';
             padding: 20px;
         }
 
+
         h1 {
             margin-bottom: 40px;
             color: #333;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
         }
 
         .contador {
@@ -73,9 +90,13 @@ require_once 'conexion.php';
             background: #0056b3;
         }
     </style>
+
+
 </head>
 
 <body>
+
+    <img src="RD LOGO.png" alt="Logo" class="logo-fijo"> <!-- 🔥 Aquí sí -->
 
 
     <h1>Resumen del Evento</h1>

@@ -11,11 +11,11 @@ body {
 
 .form-container {
     background: white;
-    padding: 30px;
+    padding: 30px 20px; /* 🔥 Ajuste de padding horizontal */
     border-radius: 15px;
     box-shadow: 0px 0px 10px 0px #aaa;
     width: 100%;
-    max-width: 500px;
+    max-width: 400px; /* 🔥 Un poquito más pequeño para móviles */
 }
 
 h2 {
@@ -41,6 +41,7 @@ input[type="number"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    box-sizing: border-box; /* 🔥 Para que padding no deforme ancho */
 }
 
 .cargos {
@@ -57,17 +58,18 @@ input[type="number"] {
 button {
     width: 100%;
     padding: 12px;
-    background: #28a745;
+    background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%); /* 🔥 Degradado azul */
     color: white;
     border: none;
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.4s ease;
 }
 
 button:hover {
-    background: #218838;
+    background: linear-gradient(90deg, #0056b3 0%, #0099cc 100%);
 }
 
 .link {
@@ -88,6 +90,7 @@ button:hover {
 /* Responsivo */
 @media (max-width: 600px) {
     .form-container {
-        padding: 20px;
+        padding: 20px 15px; /* 🔥 Padding más pequeño en móviles */
+        max-width: 90%; /* 🔥 Casi todo el ancho en móviles */
     }
 }

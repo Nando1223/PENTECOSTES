@@ -7,21 +7,16 @@
     <link rel="stylesheet" href="stylo.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Icono (favicon) -->
     <link rel="icon" href="icono.ico" type="image/x-icon">
 </head>
 
 <body>
 
     <div class="form-container">
+
         <h2>Registro de Asistencia</h2>
 
         <form id="formulario_asistente">
-
-            <!-- <div class="form-group">
-                <label for="cedula">Cédula:</label>
-                <input type="text" id="cedula" name="cedula" required>
-            </div> -->
 
             <div class="form-group">
                 <label for="nombres">Nombres:</label>
@@ -35,7 +30,7 @@
 
             <div class="form-group">
                 <label for="celular">Celular:</label>
-                <input type="text" id="celular" name="celular" required>
+                <input type="number" id="celular" name="celular" required>
             </div>
 
             <div class="form-group">
