@@ -14,8 +14,10 @@ try {
 
     $id = $_POST['id'];
 
-    // Buscar el asistente por ID
-    $sql = "SELECT Cedula, Nombres, Direccion, Celular, Congregacion, Cargo, Estado FROM PENTECOSTES_ASISTENTES WHERE ID = :id";
+    // Buscar el asistente por ID (ya sin campo Cedula)
+    $sql = "SELECT Nombres, Direccion, Celular, Congregacion, Cargo, Estado 
+            FROM PENTECOSTES_ASISTENTES 
+            WHERE ID = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':id', $id);
     $stmt->execute();
@@ -40,11 +42,10 @@ try {
         $stmtUpdate->bindParam(':id', $id);
         $stmtUpdate->execute();
 
-        // Devolver los datos del asistente
+        // Devolver los datos del asistente (sin cedula)
         echo json_encode([
             'success' => true,
             'nombre' => $asistente['Nombres'],
-            'cedula' => $asistente['Cedula'],
             'celular' => $asistente['Celular'],
             'congregacion' => $asistente['Congregacion'],
             'cargo' => $asistente['Cargo']
