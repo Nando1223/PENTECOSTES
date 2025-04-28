@@ -7,6 +7,7 @@ if (!isset($_GET['id'])) {
 $id = base64_decode($_GET['id']);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 
