@@ -17,10 +17,11 @@
         <h2>Registro de Asistentes</h2>
 
         <form id="formulario_asistente">
-            <div class="form-group">
+
+            <!-- <div class="form-group">
                 <label for="cedula">Cédula:</label>
                 <input type="text" id="cedula" name="cedula" required>
-            </div>
+            </div> -->
 
             <div class="form-group">
                 <label for="nombres">Nombres:</label>
