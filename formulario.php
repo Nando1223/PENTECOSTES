@@ -20,6 +20,11 @@
         <form id="formulario_asistente">
 
             <div class="form-group">
+                <label for="identificacion">Cedula o Pasaporte:</label>
+                <input type="text" id="identificacion" name="identificacion" required>
+            </div>
+
+            <div class="form-group">
                 <label for="nombres">Nombres:</label>
                 <input type="text" id="nombres" name="nombres" required>
             </div>

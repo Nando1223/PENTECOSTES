@@ -4,39 +4,40 @@ require_once 'conexion.php';
 header('Content-Type: application/json');
 
 try {
-    
+
     $conn = new PDO("sqlsrv:server=$serverName;Database=$database", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Recibir los datos del POST
+    $identificacion = $_POST['identificacion'];
     $nombres = $_POST['nombres'];
     $direccion = $_POST['direccion'];
     $celular = $_POST['celular'];
     $congregacion = $_POST['congregacion'];
     $cargo = $_POST['cargo'];
 
-    // Función para validar si el nombre ya existe
-    function validarNombre($conn, $nombres)
+    // Validar si ya existe el asistente con esa identificación
+    function validarIdentificacion($conn, $identificacion)
     {
-        $sql = "SELECT ID, Nombres FROM PENTECOSTES_ASISTENTES WHERE Nombres = :nombres";
+        $sql = "SELECT ID, identificacion FROM PENTECOSTES_ASISTENTES WHERE identificacion = :identificacion";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':nombres', $nombres);
+        $stmt->bindParam(':identificacion', $identificacion);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC); // Retorna la fila encontrada
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Función para guardar un nuevo asistente
-    function guardarAsistente($conn, $nombres, $direccion, $celular, $congregacion, $cargo)
+    // Guardar asistente
+    function guardarAsistente($conn, $identificacion, $nombres, $direccion, $celular, $congregacion, $cargo)
     {
-        // Insertar
         $sqlInsert = "
             INSERT INTO PENTECOSTES_ASISTENTES 
-                (Nombres, Direccion, Celular, Congregacion, Cargo, Creado_date) 
+                (Identificacion, Nombres, Direccion, Celular, Congregacion, Cargo, Creado_date) 
             VALUES 
-                (:nombres, :direccion, :celular, :congregacion, :cargo, GETDATE());
+                (:identificacion, :nombres, :direccion, :celular, :congregacion, :cargo, GETDATE());
         ";
 
         $stmtInsert = $conn->prepare($sqlInsert);
+        $stmtInsert->bindParam(':identificacion', $identificacion);
         $stmtInsert->bindParam(':nombres', $nombres);
         $stmtInsert->bindParam(':direccion', $direccion);
         $stmtInsert->bindParam(':celular', $celular);
@@ -44,13 +45,12 @@ try {
         $stmtInsert->bindParam(':cargo', $cargo);
 
         if (!$stmtInsert->execute()) {
-            return null; // Error al guardar
+            return null;
         }
 
-        // Buscar el ID por el nombre
-        $sqlSelect = "SELECT ID FROM PENTECOSTES_ASISTENTES WHERE Nombres = :nombres";
+        $sqlSelect = "SELECT ID FROM PENTECOSTES_ASISTENTES WHERE Identificacion = :identificacion";
         $stmtSelect = $conn->prepare($sqlSelect);
-        $stmtSelect->bindParam(':nombres', $nombres);
+        $stmtSelect->bindParam(':identificacion', $identificacion);
         $stmtSelect->execute();
 
         $result = $stmtSelect->fetch(PDO::FETCH_ASSOC);
@@ -58,29 +58,22 @@ try {
         return $result['ID'] ?? null;
     }
 
-    // ==========================
-    // PROCESO PRINCIPAL
-    // ==========================
-
-    // Validar si ya existe el asistente con ese nombre
-    $asistenteExistente = validarNombre($conn, $nombres);
+    // Validar si ya existe
+    $asistenteExistente = validarIdentificacion($conn, $identificacion);
 
     if ($asistenteExistente) {
         echo json_encode([
             'success' => false,
-            'message' => 'El asistente ya fue registrado: ' . $asistenteExistente['Nombres']
+            'message' => 'Ya existe un asistente registrado con esa identificación: ' . $asistenteExistente['identificacion']
         ]);
     } else {
-        $idNuevo = guardarAsistente($conn, $nombres, $direccion, $celular, $congregacion, $cargo);
+        $idNuevo = guardarAsistente($conn, $identificacion, $nombres, $direccion, $celular, $congregacion, $cargo);
 
         if ($idNuevo) {
-            // 🔥 CODIFICAR el ID para enviar seguro
-            $idCodificado = base64_encode($idNuevo);
-
             echo json_encode([
                 'success' => true,
                 'message' => 'Asistente registrado exitosamente',
-                'id' => $idCodificado
+                'id' => base64_encode($idNuevo)
             ]);
         } else {
             echo json_encode(['success' => false, 'message' => 'Error al guardar el asistente']);
@@ -90,4 +83,5 @@ try {
 } catch (PDOException $e) {
     echo json_encode(['success' => false, 'message' => 'Error de conexión: ' . $e->getMessage()]);
 }
+
 ?>

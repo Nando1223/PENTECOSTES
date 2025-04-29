@@ -4,17 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const formulario = document.getElementById('formulario_asistente');
 
     formulario.addEventListener('submit', function (event) {
+
         event.preventDefault(); // Prevenir el submit normal
 
         // Validaciones: que todos los campos estén llenos
-        // const cedula = document.getElementById('cedula').value.trim();
+        const identificacion = document.getElementById('identificacion').value.trim();
         const nombres = document.getElementById('nombres').value.trim();
         const direccion = document.getElementById('direccion').value.trim();
         const celular = document.getElementById('celular').value.trim();
         const congregacion = document.getElementById('congregacion').value.trim();
         const cargo = document.querySelector('input[name="cargo"]:checked');
 
-        if (nombres === '' || direccion === '' || celular === '' || congregacion === '' || !cargo) {
+        if (nombres === '' || direccion === '' || celular === '' || congregacion === '' || !cargo || identificacion === '') {
             Swal.fire({
                 icon: 'warning',
                 title: 'Campos incompletos',
