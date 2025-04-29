@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Registro de Asistencia / PENTECOSTES</title>
+    <title>Registro de Asistencia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icono.ico" type="image/x-icon">
 
-    <!-- ✅ RUTA DIRECTA -->
     <link rel="stylesheet" href="css/stylo.css">
 </head>
 
@@ -15,9 +14,9 @@
 <body>
     <div class="form-container">
 
-        <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -120px;"> <!-- 🔥 Logo arriba -->
+        <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -120px;">
 
-        <h2>Registro de Asistencia</h2>
+        <h2>Registro de Asistencia PENTECOSTES</h2>
 
         <form id="formulario_asistente">
 
@@ -64,7 +63,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/formulario.js"></script> <!-- ✅ AQUÍ CORREGIDO -->
+    <script src="js/formulario.js"></script>  
 
 </body>
 
