@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0f2c, #011442);
+    /* 🔥 Fondo azul oscuro degradado */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    /* 🔥 Contenedor blanco semi-transparente */
+    padding: 80px 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo-formulario {
+    width: 150px;
+    /* 🔥 Tamaño del logo */
+    margin-bottom: -60px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#reader {
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    display: none;
+    /* Se mostrará cuando den clic */
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #0a0f2c, #011442);
+    /* 🔥 Botón azul degradado */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.4s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #011442, #0a0f2c);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+        max-width: 90%;
+    }
+}
