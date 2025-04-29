@@ -28,7 +28,7 @@
         .container {
             background: rgba(255, 255, 255, 0.9);
             /* 🔥 Contenedor blanco semi-transparente */
-            padding: 80px 0px;
+            padding: 30px 20px;
             border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
             text-align: center;
@@ -39,7 +39,7 @@
         .logo-formulario {
             width: 150px;
             /* 🔥 Tamaño del logo */
-            margin-bottom: -60px;
+            margin-bottom: 10px;
         }
 
         h2 {
@@ -88,7 +88,7 @@
 <body>
 
     <div class="container">
-        <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -50px;"> <!-- 🔥 Logo arriba -->
+        <img src="RD LOGO.png" alt="Logo" class="logo-formulario" sty> <!-- 🔥 Logo arriba -->
 
         <h2>Escanea el Código QR del Asistente</h2>
 
