@@ -43,7 +43,7 @@ $id = base64_decode($_GET['id']);
             <button onclick="imprimirQR()">Imprimir QR</button>
         </div>
 
-        <a href="formulario.php">Registrar otro asistente</a>
+        <a href="index.php">Registrar otro asistente</a>
 
     </div>
 
