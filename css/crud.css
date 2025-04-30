@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(135deg, #0a0f2c, #011442);
+    color: white;
+    padding: 30px;
+}
+
+.container {
+    background: white;
+    color: black;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+.table th {
+    background-color: #011442;
+    color: white;
+}
