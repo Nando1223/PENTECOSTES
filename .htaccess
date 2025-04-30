@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /pentecostes/
+
+# Quitar la extensión .php de la URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
+# Página 404 personalizada si no existe la página
+ErrorDocument 404 /pentecostes/404.html
