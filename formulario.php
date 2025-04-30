@@ -8,7 +8,9 @@
     <link rel="icon" href="icono.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="css/stylo.css">
+    <link rel="stylesheet" href="css/icono.css">
 </head>
+
 
 
 <body>
@@ -16,12 +18,17 @@
 
         <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -120px;">
 
-        <h2>Registro de Asistencia PENTECOSTES</h2>
+        <h2>Registro de Asistencia PENTECOSTÉ</h2>
+
+        <div class="flyer-container">
+            <img src="FLYER.jpg" alt="Flyer Pentecostés" class="flyer-img">
+        </div>
+
 
         <form id="formulario_asistente">
 
             <div class="form-group">
-                <label for="identificacion">Cedula o Pasaporte:</label>
+                <label for="identificacion">Cédula o Pasaporte:</label>
                 <input type="text" id="identificacion" name="identificacion" required>
             </div>
 
@@ -63,7 +70,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/formulario.js"></script>  
+    <script src="js/formulario.js"></script>
 
 </body>
 

@@ -1,0 +1,13 @@
+.flyer-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.flyer-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+}

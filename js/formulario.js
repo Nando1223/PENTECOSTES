@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 '¡Guardado!',
                                 data.message,
                                 'success'
-                            ).then(() => {
-                                window.location.href = 'qr_asistente.php?id=' + data.id; // Ir al QR directamente
+                            ).then(() => {  //window.location.href = 'qr_asistente?id=' + data.id;
+                                window.location.href = 'qr_asistente?id=' + data.id;
                             });
                         } else {
                             Swal.fire(

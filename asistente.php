@@ -16,41 +16,48 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2 class="mb-4">Lista de Asistentes</h2>
+    <div class="container py-4">
+        <h2 class="mb-4 text-center">Lista de Asistentes</h2>
 
         <div class="d-flex justify-content-end mb-3">
-            <div class="col-12 col-md-4">
+            <a href="exportar_excel2.php" class="btn btn-success">
+                <i class="fa-solid fa-file-excel"></i> Descargar Excel
+            </a>
+        </div>
+
+        <div class="d-flex justify-content-end mb-3">
+            <div class="col-12 col-md-6 col-lg-4">
                 <input type="text" id="buscador" class="form-control" placeholder="🔍 Buscar asistente...">
             </div>
         </div>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Identificación</th>
-                    <th>Nombres</th>
-                    <th>Dirección</th>
-                    <th>Celular</th>
-                    <th>Congregación</th>
-                    <th>Cargo</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody id="tablaAsistentes">
-                <!-- Filas dinámicas -->
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Identificación</th>
+                        <th>Nombres</th>
+                        <th>Dirección</th>
+                        <th>Celular</th>
+                        <th>Congregación</th>
+                        <th>Cargo</th>
+                        <th><i class="fa-solid fa-pen-to-square"></i></th>
+                        <th><i class="fa-solid fa-trash"></i></th>
+                    </tr>
+                </thead>
+                <tbody id="tablaAsistentes">
+                    <!-- Filas dinámicas -->
+                </tbody>
+            </table>
+        </div>
     </div>
-
 
     <!-- Modal Editar -->
     <div class="modal fade" id="modalEditar" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title">Editar Asistente</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
@@ -89,11 +96,9 @@
         </div>
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/crud.js"></script>
-
-
 </body>
 
 </html>
