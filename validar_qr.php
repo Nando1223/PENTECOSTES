@@ -4,7 +4,8 @@ require_once 'conexion.php';
 header('Content-Type: application/json');
 
 try {
-    $conn = new PDO("sqlsrv:server=$serverName;Database=$database", $username, $password);
+
+    $conn = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8mb4", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if (!isset($_POST['id'])) {

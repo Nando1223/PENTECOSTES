@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 
 try {
 
-    $conn = new PDO("sqlsrv:server=$serverName;Database=$database", $username, $password);
+    $conn = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8mb4", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Recibir los datos del POST
@@ -30,10 +30,10 @@ try {
     function guardarAsistente($conn, $identificacion, $nombres, $direccion, $celular, $congregacion, $cargo)
     {
         $sqlInsert = "
-            INSERT INTO PENTECOSTES_ASISTENTES 
-                (Identificacion, Nombres, Direccion, Celular, Congregacion, Cargo, Creado_date) 
-            VALUES 
-                (:identificacion, :nombres, :direccion, :celular, :congregacion, :cargo, GETDATE());
+          INSERT INTO PENTECOSTES_ASISTENTES 
+    (Identificacion, Nombres, Direccion, Celular, Congregacion, Cargo, Creado_date) 
+VALUES 
+    (:identificacion, :nombres, :direccion, :celular, :congregacion, :cargo, NOW());
         ";
 
         $stmtInsert = $conn->prepare($sqlInsert);
