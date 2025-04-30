@@ -18,7 +18,7 @@
     <img src="RD LOGO.png" alt="Logo" class="logo" style="margin-top: -230px;">
 
     <div class="menu">
-        <a href="formulario">
+        <a href="index">
             <i class="fa-solid fa-pen-to-square"></i>
             Formulario
         </a>
