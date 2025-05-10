@@ -31,6 +31,14 @@
             </div>
         </div>
 
+        <div id="loading" class="text-center my-3" style="display: none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <p>Cargando datos, por favor espera...</p>
+        </div>
+
+
         <div class="table-responsive">
             <table class="table table-striped align-middle text-center">
                 <thead class="table-dark">

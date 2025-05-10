@@ -3,8 +3,10 @@ body {
     background: linear-gradient(135deg, #0a0f2c, #011442);
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 🔥 Cambiado: que el contenido esté arriba */
-    padding-top: 50px; /* 🔥 Espacio arriba */
+    align-items: flex-start;
+    /* 🔥 Cambiado: que el contenido esté arriba */
+    padding-top: 50px;
+    /* 🔥 Espacio arriba */
     padding-bottom: 50px;
     min-height: 100vh;
     margin: 0;
@@ -21,14 +23,17 @@ body {
 }
 
 .logo-formulario {
-    width: 250px; /* 🔥 Tamaño moderado */
-    margin-bottom: -110px; /* 🔥 Espacio justo entre logo y título */
+    width: 250px;
+    /* 🔥 Tamaño moderado */
+    margin-bottom: -110px;
+    /* 🔥 Espacio justo entre logo y título */
 }
 
 h2 {
     text-align: center;
     color: #333;
-    margin-top: 10px; /* 🔥 Un pequeño margen para que se vea bien */
+    margin-top: 10px;
+    /* 🔥 Un pequeño margen para que se vea bien */
     margin-bottom: 20px;
     font-size: 24px;
 }
@@ -90,4 +95,3 @@ button:hover {
         max-width: 90%;
     }
 }
-

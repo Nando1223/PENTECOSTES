@@ -3,6 +3,9 @@
 window.onload = () => cargarAsistentes();
 
 function cargarAsistentes() {
+    // Mostrar loading
+    document.getElementById('loading').style.display = 'block';
+
     fetch('crud_listar.php')
         .then(res => res.json())
         .then(data => {
@@ -19,21 +22,28 @@ function cargarAsistentes() {
             <td>${asistente.Congregacion}</td>
             <td>${asistente.Cargo}</td>
             <td>
-            <button class="btn btn-sm btn-warning" onclick='editar(${JSON.stringify(asistente)})' title="Editar">
-                <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-        </td>
-        <td>
-            <button class="btn btn-sm btn-danger" onclick="eliminar('${asistente.ID}')" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-        </td>
-
-         </tr>
+                <button class="btn btn-sm btn-warning" onclick='editar(${JSON.stringify(asistente)})' title="Editar">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-sm btn-danger" onclick="eliminar('${asistente.ID}')" title="Eliminar">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </td>
+        </tr>
     `;
             });
+
+            // Ocultar loading
+            document.getElementById('loading').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error al cargar los datos:', error);
+            document.getElementById('loading').innerHTML = '<p class="text-danger">Error al cargar los datos.</p>';
         });
 }
+
 
 function editar(asistente) {
     document.getElementById('editId').value = asistente.ID;

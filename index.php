@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/stylo.css">
     <link rel="stylesheet" href="css/icono.css">
+    <link rel="stylesheet" href="css/titulo.css">
 </head>
 
 
@@ -17,8 +18,10 @@
     <div class="form-container">
 
         <img src="RD LOGO.png" alt="Logo" class="logo-formulario" style="margin-top: -120px;">
+        <h1 class="titulo-invitados">Apóstol Carlos Macías y Profeta Tatiana Martínez</h1>
 
-        <h2>Registro de Asistencia PENTECOSTÉ</h2>
+
+        <h2>Registro de Asistencia PENTECOSTÉS</h2>
 
         <div class="flyer-container">
             <img src="FLYER.jpg" alt="Flyer Pentecostés" class="flyer-img">
